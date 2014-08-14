@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crear migracion CI</title>
+	<link rel="stylesheet" href="http://hubermann.com/css/BuenosWebGrid.css">
+	<style>
+	form{width: 99%}
+	textarea{width: 98%}
+	label{width: 99%}
+	input{width: 98%; padding: .5em 0 ;}
+	button{padding: .8em; margin-left: 0;}
+	.form_field{float: left; margin:.5em;width: 100%;  }
+	body{font-size: 1em}
+
+	</style>
+</head>
+<body>
+	<header class="block">
+		<div class="full">
+			<h2>Generar archivo migracion.</h2>
+		</div>
+	</header>
+<div class="block">
+	
+	<div class="full">
+		<form action="generador.php" method="post">
+		
+		<fieldset>
+			<div class="form_field">
+				<label for="tabla">Nombre de la tabla. (plural, Ej: Usuarios)</label>
+				<input type="text" name="tabla" id="tabla">
+			</div>
+			<div class="form_field">
+			<label for="campos">Campos necesarios.</label>
+				<textarea name="campos" id="campos" cols="30" rows="10"></textarea>
+			</div>
+			<div class="form_field">
+				<p>El campo id se agrega automaticamente, ingresar campos separados por coma (,)</p>
+			</div>
+			<div class="form_field">
+				<button type="submit">Go!</button>
+			</div>
+
+		</fieldset>
+
+	</form>
+	</div>
+</div>
+<div class="block">
+	<div class="full">
+		<p>* Se debe crear una carpeta /application/migrations en la raiz.</p>
+		<p>* Se configura el archivo /app/config/migrations.php con la opcion "$config['migration_enabled'] = TRUE;".</p>
+	</div>
+</div>
+
+</body>
+</html>
